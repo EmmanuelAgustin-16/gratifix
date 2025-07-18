@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel - UNOVA Gratifix</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div id="main-content">
+    <div class="navbar-container">
+      <nav class="glass-navbar">
+        <a href="#" class="nav-item" data-panel="taller">Taller</a>
+        <a href="#" class="nav-item" data-panel="caja">Caja</a>
+        <a href="#" class="nav-item" data-panel="configuracion">Configuración</a>
+        <a href="/logout" class="nav-item logout">Cerrar sesión</a>
+      </nav>
+    </div>
+
+    <main>
+      <div id="panel-taller" class="panel active">
+        <div class="panel-content">
+          <button id="agregarEquipoBtn" class="add-btn">Agregar equipo</button>
+          <div id="equiposList" class="equipos-list"></div>
+        </div>
+      </div>
+
+      <div id="panel-caja" class="panel">
+        <div class="panel-content">
+          <h2>Caja</h2>
+          <p>Próximamente.</p>
+        </div>
+      </div>
+
+      <div id="panel-configuracion" class="panel">
+        <div class="panel-content">
+          <h2>Configuración</h2>
+          <p>Próximamente.</p>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    GRATIFIX es un proyecto independiente y en crecimiento, para ayudarnos a implementar nuevas funcionalidades, puedes
+    <a href="donar.html" target="_blank" class="donate-link">DONAR AQUÍ</a>.
+  </footer>
+
+  <!-- MODAL AGREGAR / EDITAR -->
+  <div id="modalAgregarEquipo" class="modal hidden">
+    <div class="modal-content">
+      <h2 id="modalTitulo">Agregar equipo</h2>
+      <form id="formAgregarEquipo">
+        <h3>Datos del cliente</h3>
+        <input type="text" name="nombreCliente" placeholder="Nombre">
+        <input type="text" name="contactoCliente" placeholder="Contacto">
+        <input type="text" name="contrasenaEquipo" placeholder="Contraseña del equipo">
+
+        <h3>Datos del equipo</h3>
+        <input type="text" name="tipoEquipo" placeholder="Tipo de equipo">
+        <input type="text" name="marcaEquipo" placeholder="Marca">
+        <input type="text" name="modeloEquipo" placeholder="Modelo">
+        <input type="text" name="fallaEquipo" placeholder="Falla">
+        <textarea name="observacionesEquipo" placeholder="Observaciones"></textarea>
+
+        <h3>Presupuesto</h3>
+        <input type="text" name="presupuesto" placeholder="Presupuesto">
+        <input type="text" name="entrega" placeholder="Entrega del cliente">
+        <p>Debe: <span id="debeCliente">0</span></p>
+
+        <button type="submit">Guardar</button>
+        <button type="button" id="cerrarModalBtn">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL CONFIRMAR ENTREGA -->
+  <div id="modalEntrega" class="modal hidden">
+    <div class="modal-content">
+      <h2>Confirmar entrega</h2>
+      <div id="entregaInfo"></div>
+      <button id="confirmarEntregaBtn" class="add-btn" style="background: rgba(0, 255, 0, 0.2);">Confirmar entrega</button>
+      <button id="cancelarEntregaBtn" class="add-btn">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- MODAL CAMBIAR COLOR -->
+  <div id="modalColor" class="modal hidden">
+    <div class="modal-content">
+      <h2>Selecciona un color para la tarjeta</h2>
+      <div id="colorOptions" style="display: flex; gap: 0.5rem; flex-wrap: wrap; justify-content: center;">
+        <!-- Botones generados dinámicamente -->
+      </div>
+      <button id="cancelarColorBtn" class="add-btn">Cancelar</button>
+    </div>
+  </div>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>

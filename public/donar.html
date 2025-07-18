@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Donar a GRATIFIX</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+        .donar-container {
+            max-width: 400px;
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
+            border-radius: 16px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            margin: 2rem auto;
+        }
+        .donar-container h1 {
+            margin-bottom: 1rem;
+        }
+        .donar-container p {
+            margin-bottom: 0.5rem;
+        }
+        .donate-copy-btn {
+            padding: 0.7rem 1.2rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 1rem;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+        .donate-copy-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.05);
+        }
+        .icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="donar-container">
+        <div class="icon">☕</div>
+        <h1>Gracias por apoyar GRATIFIX</h1>
+        <p><strong>Lemon:</strong> rizo.literal</p>
+        <p><strong>Nombre:</strong> Emmanuel Agustín Bustos</p>
+        <button class="donate-copy-btn" onclick="copiarDatos()">Copiar datos</button>
+    </div>
+    <script>
+        function copiarDatos() {
+            const texto = "Lemon: rizo.literal\nNombre: Emmanuel Agustín Bustos";
+            navigator.clipboard.writeText(texto).then(() => {
+                alert("Datos copiados al portapapeles. ¡Gracias por tu apoyo!");
+            });
+        }
+    </script>
+</body>
+</html>
